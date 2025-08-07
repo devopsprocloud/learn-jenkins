@@ -42,6 +42,11 @@ pipeline {
                 echo 'Hey from AGENT-1....'
             }
         }
+        stage('Init') {
+            steps {
+                echo 'Initiating'
+            }
+        }
         stage('Deploy') {
             steps {
                     echo "Here I wrote shellscript"
