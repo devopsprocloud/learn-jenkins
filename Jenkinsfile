@@ -5,6 +5,9 @@ pipeline {
         }
     }
 
+    environment {
+        GREETING = 'Hello Jenkins'
+    }
     stages {
         stage('Hello') {
             steps {
@@ -19,6 +22,14 @@ pipeline {
         stage('Hey') {
             steps {
                 echo 'Hey from AGENT-1....'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh """
+                    echo "Here I wrote shellscript"
+                    env
+                """
             }
         }
     }
