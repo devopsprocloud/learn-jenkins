@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'AGENT-1'
+        }
+    }
 
     stages {
         stage('Hello') {
@@ -14,7 +18,7 @@ pipeline {
         }
         stage('Hey') {
             steps {
-                echo 'Hey Dad....'
+                echo 'Hey from AGENT-1....'
             }
         }
     }
