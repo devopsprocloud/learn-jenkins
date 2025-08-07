@@ -22,4 +22,16 @@ pipeline {
             }
         }
     }
+    //POST Stages
+    post { 
+        always { 
+            echo 'Pipeline is executed'
+        }
+        failure {
+            echo 'The pipeline is Failed, Please send some alerts'
+        }
+        success {
+            echo 'Pipeline executed successfully'
+        }
+    }
 }
