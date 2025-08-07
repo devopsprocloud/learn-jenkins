@@ -44,10 +44,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh """
                     echo "Here I wrote shellscript"
                     echo "$GREETING"
-                """
             }
         }
         stage('Check Parameters') {
